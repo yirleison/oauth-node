@@ -1,0 +1,60 @@
+<div>
+	<style media="screen" type="text/css">
+	.container-code{
+		height: 70vh;
+	    display: flex;
+	    align-items: center;
+	    justify-content: center;
+	}
+	.container-code > div{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0px 100px !important;
+	}
+	.container-code > div > div:nth-child(1) > span{
+		color: #df001e;
+		font-weight: 700;
+		font-size:20px;
+	}
+	.container-code > div > div:nth-child(2) > p{
+		text-align:center;
+	}
+	.container-code > div > div{
+		margin: 5px 0px;
+	}
+	.container-code > div > form{
+		margin: 15px 0px;
+	}
+    .oauth-button {
+		text-decoration: none !important;
+		border-radius: 4px;
+		color: #fff;
+		border-color: #005296;
+		cursor: pointer;
+		background-image: none;
+		border: none;
+		padding: 17px 28px;
+		font-size: 15px;
+		margin: 0px 5px;
+    }
+    .oauth-button-blue{
+    	background-color: #00418b;
+    	box-shadow: 0 0 20px #00418b;
+    }
+    </style>
+	<div class="container-code">
+		<div>
+			<div><span>Token code</span></div>
+			<div><p>'+data.access_token+'</p></div>
+
+			<form>
+				<div>
+					<a href="index.html">
+						<button class="oauth-button oauth-button-blue">Go to home</button>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

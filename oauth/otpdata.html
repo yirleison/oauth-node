@@ -1,0 +1,92 @@
+<!doctype html>
+<html ng-app="oauthApp">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js" type="text/javascript"></script>		
+<script src="index.js" type="text/javascript"></script>
+<style media="screen" type="text/css">
+	body{
+		padding: 0;
+		margin: 0;
+	}
+	header{
+		box-shadow: 0 0 5px #333;
+		padding: 10px 20px;
+	}
+	.parent-form{
+		display: flex;
+		justify-content: center;
+		height: 70vh;
+		align-items: center;
+		padding-top: 50px;
+	}
+	.parent-form>div{
+		border: 1px #cccccc solid;
+		padding: 40px;
+		box-shadow: 0 0 20px #cccccc;
+		min-width: 240px;
+	}
+	.container-data{
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.container-data>input{
+		border: 1px solid #00448c;
+		border-radius: 3px;
+		color: #00448c !important;
+		margin-top: 10px;
+		padding: 8px 10px 6px 9px !important;
+		font-size: 14px;
+		height: 22px;
+	}
+	.container-submit{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.container-data>input:nth-child(1){
+		margin-top: 0px;
+	}
+	.oauth-button {
+		text-decoration: none !important;
+		border-radius: 4px;
+		color: #fff;
+		border-color: #005296;
+		cursor: pointer;
+		background-image: none;
+		border: none;
+		padding: 17px 28px;
+		font-size: 15px;
+		margin-top: 30px;
+	}
+	.oauth-button-blue{
+		background-color: #00418b;
+		box-shadow: 0 0 10px #00418b;
+	}
+	.oauth-return{
+		color: #00418b;
+		text-align: center;
+		margin-top: 10px;
+		text-decoration: none;
+	}
+</style>
+<div ng-controller="oauthCtrl">
+	<div class="parent-form">
+		<div>
+			<form method="GET">
+				<div class="container-data">	
+					<input name="client_id" placeholder="Client id" required>
+					<input id="client_secret" placeholder="Client Secret" required>
+					<input id="catalog" placeholder="Catalog name" required>
+					<input name="scope" placeholder="Scope" required>
+					<input name="redirect_uri" placeholder="Redirect uri" required>
+					<input type="hidden" name="response_type" value="code">
+				</div>
+				<div class="container-submit">
+					<button class="oauth-button oauth-button-blue" ng-click="enviardatos()">Get authorization Code</button>
+					<a class="oauth-return" href="/">Return</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+</html>
